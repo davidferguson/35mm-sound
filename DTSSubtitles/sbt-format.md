@@ -14,8 +14,9 @@ The file header is 202 bytes long, and contains the following information:
 
 | Field           | Start Byte Offset | Length | Format       |
 |-----------------|-------------------|--------|--------------|
-| Unknown0        | 0                 | 3      |              |
-| Film name       | 6                 | 21     | ASCII        |
+| Header          | 0                 | 3      |              |
+| DTS             | 6                 | 3      | ASCII        |
+| Film name       | 9                 | 18     | ASCII        |
 | Studio code     | 69                | 3      | ASCII        |
 | DTS serial code | 79                | 2      | Integer, LSB |
 | Language        | 85                | 3      | ASCII        |
