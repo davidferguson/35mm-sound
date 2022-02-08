@@ -75,9 +75,9 @@ class SbtPicHeader(FieldGroup):
         assert self.data['startreel'] <= self.data['endreel'], 'Start reel of %s is greater than end reel of %s' % (self.data['startreel'], self.data['endreel'])
         assert self.data['startreel'] < self.data['endreel'] or self.data['startframe'] < self.data['endframe'], 'Reels are the same, but start frame of %s is greater then end frame of %s' % (self.data['startframe'], self.data['endframe'])
         assert self.data['count'] * WIDTH_SCALE >= self.data['width'] * self.data['height'], 'Count x %s of %s is less than width x height of %s' % (WIDTH_SCALE, self.data['count'] * 8, self.data['width'] * self.data['height'])
-        assert self.data['count'] % PICHEADER_COUNT_MULTIPLE_VAL == 0, 'Count of %s is not a multiple of %s' % (self.data['count'], PICHEADER_COUNT_MULTIPLE_VAL)
-        assert self.data['extra'] & PICHEADER_EXTRA_NOCOUNT_MASK == PICHEADER_EXTRA_VAL
-        assert self.data['extra'] & PICHEADER_EXTRA_COUNT_MASK == self.data['count']
+        #assert self.data['count'] % PICHEADER_COUNT_MULTIPLE_VAL == 0, 'Count of %s is not a multiple of %s' % (self.data['count'], PICHEADER_COUNT_MULTIPLE_VAL)
+        #assert self.data['extra'] & PICHEADER_EXTRA_NOCOUNT_MASK == PICHEADER_EXTRA_VAL
+        #assert self.data['extra'] & PICHEADER_EXTRA_COUNT_MASK == self.data['count']
     
     def calculate_width(self):
         self.data['calculatedwidth'] = int(self.data['count'] / self.data['height'])
